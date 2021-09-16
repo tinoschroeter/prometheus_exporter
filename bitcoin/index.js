@@ -12,8 +12,8 @@ app.get('/metrics', (req, res) => {
 fetch(`${url}${currency}`)
   .then(result => result.json())
   .then(data => {
-    res.send(`# HELP BTC_${currency}_AMOUNT bitcoin price in EUR.\n` +
-    "# TYPE btc_eur_amount summary\n" +
+    res.send(`# HELP BTC_${currency}_AMOUNT bitcoin price in ${currency}.\n` +
+    `# TYPE BTC_${currency}_AMOUNT summary\n` +
     `BTC_${currency}_AMOUNT ` + data.data.amount
     )})
   .catch(err => {
