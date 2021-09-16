@@ -1,0 +1,14 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+  - image: registry.tino.sh/speedtest-exporter
+    context: ../../
+    docker:
+      target: speedtest-exporter
+  - image: registry.tino.sh/bitcoin-exporter
+    context: ../../
+    docker:
+      target: bitcoin-exporter
+deploy:
+  kustomize: {}

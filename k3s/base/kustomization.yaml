@@ -1,0 +1,6 @@
+namespace: exporter
+resources:
+  - service.yaml
+  - config.yaml
+  - speedtest.yaml
+  - bitcoin-exporter.yaml

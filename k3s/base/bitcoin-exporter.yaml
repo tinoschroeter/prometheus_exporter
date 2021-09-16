@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bitcoin-exporter-app
+  name: bitcoin-exporter-app
+  namespace: exporter
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bitcoin-exporter-app
+  template:
+    metadata:
+      labels:
+        app: bitcoin-exporter-app
+    spec:
+      containers:
+      - name: bitcoin-exporter-app
+        image: registry.tino.sh/bitcoin-exporter
+        envFrom:
+          - configMapRef:
+              name: bitcoin-conf
+        resources:
+          requests:
+            memory: "40Mi"
+            cpu: "60m"
+          limits:
+            memory: "90Mi"
+            cpu: "100m"

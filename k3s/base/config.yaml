@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: speedtest-conf
+  namespace: exporter
+data:
+  app: "speedtest"
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bitcoin-conf
+  namespace: exporter
+data:
+  CURRENCY: "EUR"
+  PORT: "9100"
