@@ -1,5 +1,7 @@
 # prometheus_exporter [![k8s](https://img.shields.io/badge/Prometheus-black.svg)](https://github.com/prometheus/prometheus)
 
+[![Build Status](https://jenkins.tino.sh/buildStatus/icon?job=prometheus_exporter%2Fmaster)](https://jenkins.tino.sh/job/prometheus_exporter/job/master/)
+
 A list of my exporters for Prometheus
 
 * speedtest-exporter
