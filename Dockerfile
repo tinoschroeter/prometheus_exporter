@@ -11,7 +11,7 @@ RUN make build
 CMD [ "/app/speedtest_exporter" ]
 
 
-FROM node:16.9.1-bullseye-slim AS bitcoin-exporter
+FROM node:bullseye-slim AS bitcoin-exporter
 
 RUN apt update && apt dist-upgrade -y
 WORKDIR /app
