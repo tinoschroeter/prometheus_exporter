@@ -1,19 +1,19 @@
+# hadolint ignore=DL3006
 FROM golang:1.16-alpine AS speedtest-exporter
 
-RUN apk -U upgrade
-RUN apk add git make bash curl
+# https://pkgs.alpinelinux.org/packages
+RUN apk add --no-cache git=2.34.1-r1 make=4.3-r0 bash=5.1.8-r0 curl=7.80.0-r0
 
 WORKDIR /app
 
-RUN git clone https://github.com/nlamirault/speedtest_exporter.git .
-RUN make build
+RUN git clone https://github.com/nlamirault/speedtest_exporter.git . && \
+make build
 
 CMD [ "/app/speedtest_exporter" ]
 
 
-FROM node:16.11.1-bullseye-slim AS bitcoin-exporter
+FROM node:gallium-bullseye-slim AS bitcoin-exporter
 
-RUN apt update && apt dist-upgrade -y
 WORKDIR /app
 COPY bitcoin .
 
