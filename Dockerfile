@@ -2,7 +2,7 @@
 FROM golang:1.16-alpine AS speedtest-exporter
 
 # https://pkgs.alpinelinux.org/packages
-RUN apk add --no-cache git=2.34.1-r1 make=4.3-r0 bash=5.1.8-r0 curl=7.80.0-r0
+RUN apk add --no-cache git make bash curl
 
 WORKDIR /app
 
