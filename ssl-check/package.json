@@ -1,0 +1,18 @@
+{
+  "name": "ssl-check",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "certificate-expiry": "^1.0.0",
+    "certificate-monitor": "^1.1.9",
+    "controlio-check-ssl": "^0.0.3",
+    "express": "^4.17.1"
+  }
+}
