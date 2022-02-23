@@ -1,7 +1,7 @@
 # hadolint ignore=DL3006
 FROM node:16-alpine AS speedtest-exporter
 
-RUN apk add --no-cache git curl make python3
+RUN apk add --no-cache git curl make gcc g++ python3
 
 WORKDIR /app
 
