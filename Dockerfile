@@ -1,15 +1,14 @@
 # hadolint ignore=DL3006
-FROM golang:1.16-alpine AS speedtest-exporter
+FROM node:16-alpine AS speedtest-exporter
 
-# https://pkgs.alpinelinux.org/packages
-RUN apk add --no-cache git make bash curl
+RUN apk add --no-cache git curl
 
 WORKDIR /app
 
-RUN git clone https://github.com/nlamirault/speedtest_exporter.git . && \
-make build
+RUN git clone https://github.com/tinoschroeter/breitbandmessung.git . && \
+npm install
 
-CMD [ "/app/speedtest_exporter" ]
+CMD [ "node", "index.js" ]
 
 
 FROM node:gallium-bullseye-slim AS bitcoin-exporter
