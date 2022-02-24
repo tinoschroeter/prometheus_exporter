@@ -7,13 +7,10 @@
 
 A list of my exporters for Prometheus
 
-* speedtest-exporter
-
+* [speedtest-exporter](https://github.com/tinoschroeter/breitbandmessung)
   * [speedtest-dashboard](https://grafana.com/grafana/dashboards/15808)
 
-
-* bitcoin-exporter
-
+* [bitcoin-exporter](https://github.com/tinoschroeter/prometheus_exporter/tree/master/bitcoin)
   * [bitcoin-dashboard](https://grafana.com/grafana/dashboards/15810)
 
 <img src="https://raw.githubusercontent.com/tinoschroeter/prometheus_exporter/master/docs/noc.jpg" align="left"
