@@ -1,7 +1,7 @@
 # hadolint ignore=DL3006
 FROM node:16-alpine AS speedtest-exporter
 
-LABEL version="0.0.3"
+LABEL version="0.0.4"
 
 RUN apk add --no-cache git curl make gcc g++ python3
 
