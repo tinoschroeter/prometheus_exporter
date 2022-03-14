@@ -11,6 +11,7 @@ pipeline {
           branch 'dev'
           anyOf {
             changeset "bitcoin/**"
+            changeset "ping_check/**"
             changeset "Dockerfile"
             changeset "k3s/base/**"
             changeset "k3s/dev/**"
@@ -26,6 +27,7 @@ pipeline {
           branch 'master'
           anyOf {
             changeset "bitcoin/**"
+            changeset "ping_check/**"
             changeset "Dockerfile"
             changeset "k3s/base/**"
             changeset "k3s/production/**"

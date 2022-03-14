@@ -23,6 +23,7 @@ RUN npm install
 CMD ["node", "index.js"]
 
 FROM node:gallium-bullseye-slim AS ping-check-exporter
+LABEL version="0.0.2"
 
 WORKDIR /app
 COPY ping_check .
