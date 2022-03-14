@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ping-check-exporter-app
+  name: ping-check-exporter-app
+  namespace: exporter
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ping-check-exporter-app
+  template:
+    metadata:
+      labels:
+        app: ping-check-exporter-app
+    spec:
+      containers:
+      - name: ping-check-exporter-app
+        image: registry.tino.sh/ping-check-exporter
+        resources:
+          requests:
+            memory: "40Mi"
+            cpu: "60m"
+          limits:
+            memory: "100Mi"
+            cpu: "180m"
+        ports:
+        - containerPort: 9112

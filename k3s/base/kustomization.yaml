@@ -4,3 +4,4 @@ resources:
   - config.yaml
   - speedtest.yaml
   - bitcoin-exporter.yaml
+  - ping-check-exporter.yaml

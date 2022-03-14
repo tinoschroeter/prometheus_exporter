@@ -21,3 +21,12 @@ COPY bitcoin .
 RUN npm install
 
 CMD ["node", "index.js"]
+
+FROM node:gallium-bullseye-slim AS ping-check-exporter
+
+WORKDIR /app
+COPY ping_check .
+
+RUN npm install
+
+CMD ["node", "index.js"]
