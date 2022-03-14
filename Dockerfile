@@ -23,6 +23,7 @@ RUN npm install
 CMD ["node", "index.js"]
 
 FROM node:gallium-bullseye-slim AS ping-check-exporter
+RUN apt-get update && apt-get install ping
 LABEL version="0.0.2"
 
 WORKDIR /app
