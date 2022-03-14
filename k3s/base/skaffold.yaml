@@ -10,5 +10,9 @@ build:
     context: ../../
     docker:
       target: bitcoin-exporter
+  - image: registry.tino.sh/ping-check-exporter
+    context: ../../
+    docker:
+      target: ping-check-exporter
 deploy:
   kustomize: {}
