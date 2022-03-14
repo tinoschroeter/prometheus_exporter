@@ -23,7 +23,8 @@ app.get("/metrics/:fqdn", async (req, res) => {
     res.set("Content-Type", "text/plain");
     res.send(output);
   } catch (err) {
-    res.status(500).end();
+    console.error(err)
+    res.status(500).send(err);
   }
 });
 
