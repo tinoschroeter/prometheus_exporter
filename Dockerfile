@@ -29,9 +29,22 @@ RUN apt-get update && \
     apt-get install iputils-ping -y && \
     rm -rf /var/lib/apt/lists/*
 
-
 WORKDIR /app
 COPY ping_check .
+
+RUN npm install
+
+CMD ["node", "index.js"]
+
+FROM node:gallium-bullseye-slim AS dns-check-exporter
+LABEL version="0.0.1"
+
+RUN apt-get update && \
+    apt-get install dnsutils -y && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY dns_check .
 
 RUN npm install
 

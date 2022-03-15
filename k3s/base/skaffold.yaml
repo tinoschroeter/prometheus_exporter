@@ -14,5 +14,9 @@ build:
     context: ../../
     docker:
       target: ping-check-exporter
+  - image: registry.tino.sh/dns-check-exporter
+    context: ../../
+    docker:
+      target: dns-check-exporter
 deploy:
   kustomize: {}

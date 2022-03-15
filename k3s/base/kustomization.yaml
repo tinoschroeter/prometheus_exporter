@@ -5,3 +5,4 @@ resources:
   - speedtest.yaml
   - bitcoin-exporter.yaml
   - ping-check-exporter.yaml
+  - dns-check-exporter.yaml
