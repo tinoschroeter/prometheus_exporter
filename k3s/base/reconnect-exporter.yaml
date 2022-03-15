@@ -6,7 +6,7 @@ metadata:
   name: reconnect-exporter-app
   namespace: exporter
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: reconnect-exporter-app
@@ -20,7 +20,7 @@ spec:
         image: registry.tino.sh/reconnect-exporter
         envFrom:
         - configMapRef:
-          name: config
+            name: config
         env:
           - name: MONGODB_URI
             valueFrom:
@@ -35,4 +35,4 @@ spec:
             memory: "100Mi"
             cpu: "180m"
         ports:
-        - containerPort: 9112
+        - containerPort: 9100
