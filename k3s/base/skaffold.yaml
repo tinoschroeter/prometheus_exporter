@@ -18,5 +18,9 @@ build:
     context: ../../
     docker:
       target: dns-check-exporter
+  - image: registry.tino.sh/reconnect-exporter
+    context: ../../
+    docker:
+      target: reconnect-exporter
 deploy:
   kustomize: {}

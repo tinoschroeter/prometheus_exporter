@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: reconnect-exporter-app
+  name: reconnect-exporter-app
+  namespace: exporter
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: reconnect-exporter-app
+  template:
+    metadata:
+      labels:
+        app: reconnect-exporter-app
+    spec:
+      containers:
+      - name: reconnect-exporter-app
+        image: registry.tino.sh/reconnect-exporter
+        envFrom:
+        - configMapRef:
+          name: config
+        env:
+          - name: MONGODB_URI
+            valueFrom:
+              secretKeyRef:
+                name: passwords
+                key: MONGODB_URI
+        resources:
+          requests:
+            memory: "40Mi"
+            cpu: "60m"
+          limits:
+            memory: "100Mi"
+            cpu: "180m"
+        ports:
+        - containerPort: 9112
