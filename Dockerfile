@@ -49,3 +49,13 @@ COPY dns_check .
 RUN npm install
 
 CMD ["node", "index.js"]
+
+FROM node:gallium-bullseye-slim AS reconnect-exporter
+LABEL version="0.0.1"
+
+WORKDIR /app
+COPY reconnect .
+
+RUN npm install
+
+CMD ["node", "index.js"]
