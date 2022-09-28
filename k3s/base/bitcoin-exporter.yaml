@@ -23,8 +23,8 @@ spec:
               name: bitcoin-conf
         resources:
           requests:
-            memory: "40Mi"
-            cpu: "60m"
+            memory: "80Mi"
+            cpu: "120m"
           limits:
-            memory: "90Mi"
-            cpu: "100m"
+            memory: "120Mi"
+            cpu: "200m"
