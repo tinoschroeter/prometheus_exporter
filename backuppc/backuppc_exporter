@@ -14,7 +14,7 @@ for host in $(cat /etc/backuppc/hosts|grep -v '^#\|^host'|awk '{print $1}'); do
 done
 
 fi
-if [ -f /var/lib/backuppc ];then
+if [ -d /var/lib/backuppc ];then
   pool_usage=$(df -h|grep '/var/lib/backuppc'|awk '{print $5}'|sed 's/%//g')
   echo "# HELP backuppc_pool_usage BackupPC pool usage (0 to 100)"
   echo "# TYPE backuppc_pool_usage gauge"

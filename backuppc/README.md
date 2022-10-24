@@ -2,8 +2,37 @@
 
 ## Usage
 
-Textfile Collector Scripts for the Node Exporter.
+### Textfile Collector
 
+The textfile module is for metrics that are tied to a machine.
+
+To use it, create files in this directory that are readable by the prometheus user.  
+The collector will parse all files in matching the glob *.prom using the text format.
+
+```bash
+cat /etc/default/prometheus-node-exporter
+
+# --collector.textfile.directory="/var/lib/prometheus/node-exporter"
+# Directory to read text files with metrics from.
+
+# --collector.textfile      
+# Enable the textfile collector (default: enabled).
+```
+
+```bash
+<collector_script> | sponge <output_file>
+/opt/backuppc_exporter | sponge /var/lib/prometheus/node-exporter/backuppc.prom
+```
+
+```bash
+# Sponge comes from moreutils
+moreutils
+```
+### cron job
+
+```bash
+*/10 * * * * /opt/backuppc_exporter | sponge /var/lib/prometheus/node-exporter/backuppc.prom
+```
 
 ## Exposed metrics
 
