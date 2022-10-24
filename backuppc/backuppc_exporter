@@ -9,7 +9,9 @@ for host in $(cat /etc/backuppc/hosts|grep -v '^#\|^host'|awk '{print $1}'); do
 
   if [ -f /var/lib/backuppc/pc/${host}/backups ];then
     age=$(tail -n1 /var/lib/backuppc/pc/${host}/backups|grep 'full\|incr'|awk '{print $3}')
-    echo "backuppc_last_age{hostname=\"${host}\"} $((timeNow - age))"
+    if [ ! -z "$age" ]; then # check if age is not blank
+      echo "backuppc_last_age{hostname=\"${host}\"} $((timeNow - age))"
+    fi
   fi
 done
 
