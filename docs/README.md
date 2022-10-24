@@ -13,5 +13,7 @@ A list of my exporters for Prometheus
 * [bitcoin-exporter](https://github.com/tinoschroeter/prometheus_exporter/tree/master/bitcoin)
   * [bitcoin-dashboard](https://grafana.com/grafana/dashboards/15810)
 
+* [backuppc-exporter](https://github.com/tinoschroeter/prometheus_exporter/tree/master/backuppc)
+
 <img src="https://raw.githubusercontent.com/tinoschroeter/prometheus_exporter/master/docs/noc.jpg" align="left"
      alt="NOC" width="500" height="337">
