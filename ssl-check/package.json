@@ -13,6 +13,6 @@
     "certificate-expiry": "^1.0.0",
     "certificate-monitor": "^1.1.9",
     "controlio-check-ssl": "^0.0.3",
-    "express": "^4.17.1"
+    "express": "^5.2.1"
   }
 }
